@@ -1,0 +1,98 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a class="active" ng-href="#"></a></li>
+    <li><a ng-href="/mycustomer"></a></li>
+  </ul>
+  <h3 class="text-muted">dyo5</h3>
+</div>
+
+<div class="jumbotron">
+  <h1><form>************</form></h1>
+  <div class="hero-unit">
+
+ <p><h2></h2></p>
+ 
+   <p class="lead">
+    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+  
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#my-customer">Splendid!</a></p>
+</div>
+
+<div class="row marketing">
+<div ui-sortable>
+  <p ng-repeat="todo in todos">
+  	<input type="text" ng-model="todo">
+  	<a class="btn" ng-click="removeTodo($index)">X</a>
+  </p>
+  </div>
+  <form ng-submit="addTodo()">
+  	<div class="controls form-inline">
+  <h3>REGISTER YOUR CUSTOMER IN YOUR BOOK</h3>
+<input type="text" id="name" ng-model="customer.name" placeholder="Name"><br/>
+<input type="email" id="email" ng-model="customer.email" placeholder="Email"><br/>
+<input type="invoice" id="invoice" ng-model="customer.invoice" placeholder="0"><br/>
+	<input type="submit" class="btn btn-primary" value="Add">
+  	</div>
+  </form>
+<p/>
+<br />
+
+</div>
+		
+			<form>
+			<ul>
+				<!-- Loop through the services array, assign a click handler, and set or
+					remove the "active" css class if needed -->
+				<li ng-repeat="service in services" ng-click="toggleActive(service)" ng-class="{active:service.active}">
+					<!-- Notice the use of the currency filter, it will format the price -->
+					{{service.name}} <span>{{service.price | currency}}</span>
+				</li>
+			</ul>
+
+			<div class="total">
+				<!-- Calculate the total price of all chosen services. Format it as currency. -->
+				Total: <span>{{total() | currency}}</span>
+				
+			</div>
+		
+        <h3>Name: </h3><input type="text" ng-model="customer.name"  /><br />
+       <h3> E-mail: </h3><input type="email" ng-model="customer.email" /><br />
+		 <h3>Invoice: </h3><input type="invoice" value="{{total()}}" /><br /><br />
+        <button ng-click="reset()"><h3>RESET</h3></button>
+        <button ng-click="update(customer)"><h3>SAVE</h3></button>  
+   </form>
+	 <form ng-submit="addTodo()">
+  <ul>
+				<!-- Loop through the services array, assign a click handler, and set or
+					remove the "active" css class if needed -->
+		
+					<h1>Customer: </h1><span>	</span>
+					<h2><input type="text" id="name" ng-model="customer.name" placeholder="Name"></h2>
+<h2><input type="email" id="email" ng-model="customer.email" placeholder="Email"></h2>
+<h2><input type="invoice" id="invoice" value="{{total()}}"></h2><br/>
+				<input type="submit" class="btn btn-primary" value="Add">
+
+
+				
+</form>
+
+
+
+			<form id="#p">
+			
+			<textarea rows="4" cols="50">
+{{greeting}}
+INOVICE
+Name: {{customer.name}} Address: {{customer.email}}
+{{total() | currency}}
+</textarea></form>
+			</div>
+	</form>
+  
+</div>
+
+<div class="footer">
+  <p>♥ thank to the Yeoman team</p>
+</div>
